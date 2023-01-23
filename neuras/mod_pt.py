@@ -34,6 +34,8 @@ class ModPT():
             self.red = red
             self.red.unidades = unidades
         
+        self.resultado = []
+        
         self.funcLoss = funcLoss
         self.optim = Optim(self.red.parameters())
         
@@ -89,11 +91,10 @@ class ModPT():
     def recaEval(self):
         self.loss /= self.numUni
         self.corr /= self.numUni
-        self.corr_history.append(self.corr/self.numUni)
+        self.resultado.append(self.corr )
 
     def printEval(self, epo):
         print(f'{epo=}\t{self.loss=}\t{self.corr=:.2%}\t({dt.now():%d/%b/%y %H:%M:%S})\n')
-
 
 def calcDimIni(dirPrm, *ficLisPrm):
     """
