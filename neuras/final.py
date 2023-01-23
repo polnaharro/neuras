@@ -3,7 +3,7 @@
 import tqdm
 from datetime import datetime as dt
 
-def entorch(modelo, nomMod, lotesEnt, lotesDev=[], numEpo=1):
+def final(modelo, nomMod, lotesEnt, lotesDev=[], numEpo=1):
 
     print(f'Inicio de {numEpo} épocas de entrenamiento ({dt.now():%d/%b/%y %H:%M:%S}):')
     for epo in range(numEpo):
@@ -83,4 +83,4 @@ if __name__ == '__main__':
     for expr in args['--modelo'].split(';'):
         modelo = eval(expr)
 
-    entorch(modelo=modelo, nomMod=nomMod, lotesEnt=lotesEnt, lotesDev=lotesDev, numEpo=numEpo)
+    final(modelo=modelo, nomMod=nomMod, lotesEnt=lotesEnt, lotesDev=lotesDev, numEpo=numEpo)
