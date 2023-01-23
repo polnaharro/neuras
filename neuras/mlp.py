@@ -1,4 +1,5 @@
 import torch
+from torch.optim import Adam
 
 class MLP_3(torch.nn.Module):
     """

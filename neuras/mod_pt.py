@@ -36,6 +36,9 @@ class ModPT():
         
         self.funcLoss = funcLoss
         self.optim = Optim(self.red.parameters())
+        
+        self.optim_history = []
+
 
     def escrMod(self, ficMod):
         try:
@@ -86,6 +89,7 @@ class ModPT():
     def recaEval(self):
         self.loss /= self.numUni
         self.corr /= self.numUni
+        self.corr_history.append(self.corr/self.numUni)
 
     def printEval(self, epo):
         print(f'{epo=}\t{self.loss=}\t{self.corr=:.2%}\t({dt.now():%d/%b/%y %H:%M:%S})\n')

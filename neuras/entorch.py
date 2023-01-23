@@ -1,5 +1,4 @@
 #! /usr/bin/python3
-
 import tqdm
 from datetime import datetime as dt
 
@@ -83,3 +82,4 @@ if __name__ == '__main__':
         modelo = eval(expr)
 
     entorch(modelo=modelo, nomMod=nomMod, lotesEnt=lotesEnt, lotesDev=lotesDev, numEpo=numEpo)
+
